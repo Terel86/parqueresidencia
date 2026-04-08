@@ -13,6 +13,15 @@
     --shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
+@media screen {
+  body {
+    zoom: 0.8; /* Ajuste para diminuir o zoom do site */
+    -moz-transform: scale(0.8);
+    -moz-transform-origin: 0 0;
+  }
+}
+
+
 body {
     font-family: 'Georgia', serif;
     background: linear-gradient(135deg, #c4b5a0 0%, #a0947a 100%);
