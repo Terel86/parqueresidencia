@@ -16,10 +16,10 @@
 
 
 body {
-    font-family: 'Georgia', serif;
     background: linear-gradient(135deg, #c4b5a0 0%, #a0947a 100%);
     min-height: 100vh;
     overflow: hidden;
+    font-family: "abril-titling", serif;
 }
 
 /* SCREEN STYLING */
@@ -84,7 +84,7 @@ body {
     color: var(--white);
     letter-spacing: 1.2px;
     background-color: #00000050;
-    padding: 1px 10px;
+    padding: 0px 10px;
     line-height: 25px;
     text-align: center;
     border-radius: 15px;
@@ -354,6 +354,13 @@ body {
     backdrop-filter: blur(5px);
     scrollbar-color: #3d2f00 transparent;
     border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.detail-realizações.is-short {
+    justify-content: center;
 }
 
 
@@ -382,6 +389,20 @@ body {
     letter-spacing: 1.5px;
     color: var(--white);
     font-weight: bold;
+    margin-top: -30px;
+    margin-bottom: -10px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    letter-spacing: 2px;
+}
+.title-inicio {
+    font-family: "abril-titling", serif;
+    font-weight: 900;
+    font-style: normal;
+    font-size: 4rem;
+    letter-spacing: 1.5px;
+    color: var(--white);
+    font-weight: bold;
+    /* margin-top: -30px; */
     margin-bottom: 20px;
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
     letter-spacing: 2px;
@@ -408,7 +429,11 @@ body {
     padding-left: 30px;
     margin-left: 16px;
 }
-
+.sub_details-mandatos{
+    margin-bottom: -10px;
+    padding-left: 8px;
+    margin-left: 16px;
+}
 .datas {
     font-family: "abril-titling", serif;
     font-weight: 700;
@@ -460,8 +485,8 @@ body {
     align-items: center;
     justify-content: space-between;
     text-align: center;
-    margin-top: 150px;
-    margin-bottom: 40px;
+    margin-top: 123px;
+    margin-bottom: 70px;
 }
 
 .foto-governador {
@@ -495,13 +520,13 @@ body {
     font-family: "abril-titling", serif;
     font-weight: 300;
     font-style: normal;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     letter-spacing: 1.5px;
     color: var(--white);
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     font-style: italic;
     opacity: 0.9;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.882);
 }
 
 /* BUTTONS */
@@ -517,8 +542,7 @@ body {
     border-radius: 50px;
     cursor: pointer;
     font-weight: bold;
-    transition: all 0.3s ease;
-    /* text-transform: uppercase; */
+    transition: all 1s ease-in-out;
     letter-spacing: 1px;
     margin: 10px;
     box-shadow: var(--shadow);
@@ -560,8 +584,7 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
     gap: 20px;
     padding: 0 120px;
-    margin-bottom: 10px;
-    /* margin-top: 40px; */
+    margin-bottom: 45px;
 }
 
 .governor-card {
@@ -589,7 +612,7 @@ body {
 .governor-image {
     height: 150px;
     background: #f5f5f5;
-    border-radius: 6px 6px 0 0;
+    border-radius: 10px 10px 0 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -652,7 +675,7 @@ body {
     text-align: center;
     font-weight: bold;
     margin-bottom: 30px;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.782);
     letter-spacing: 1px;
 }
 
@@ -685,7 +708,10 @@ body {
     padding: 20px 30px 20px 60px;
     line-height: 1.8;
     letter-spacing: 1.5px;
-    height: 600px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
     scrollbar-width: thin;
     margin: 0 auto;
     text-align: justify;
@@ -693,6 +719,12 @@ body {
     backdrop-filter: blur(5px);
     scrollbar-color: #3d2f00 transparent;
     border-radius: 10px;
+}
+.detail-curiosidades ul li{
+    margin-bottom: 10px;
+}
+.detail-curiosidades.is-short {
+    justify-content: center;
 }
 
 .detail-realizações::-webkit-scrollbar,
