@@ -187,6 +187,13 @@ body.lb-disable-scrolling {
 	opacity: 0.8;
 }
 
+@media (hover: none), (pointer: coarse) {
+	.lb-nav a.lb-prev,
+	.lb-nav a.lb-next {
+		display: none;
+	}
+}
+
 .lb-dataContainer {
 	margin: 0 auto;
 	padding-top: 6px;
