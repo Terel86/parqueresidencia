@@ -239,7 +239,7 @@ body {
     top: 0;
     left: 50%;
     transform: translateX(-50%) translateX(20px);
-    width: 100%;
+    width: 90%;
     display: flex;
     opacity: 0;
     pointer-events: none;
@@ -308,23 +308,13 @@ body {
 
 /* realizações */
 .content-realizacoes {
-    position: relative;
+   position: relative;
     z-index: 5;
     width: 80vw;
     margin: 0 auto;
     padding: 60px 40px;
     text-align: center;
     animation: fadeIn 0.8s ease;
-
-    /*     
-    position: relative;
-    z-index: 5;
-    width: 1200px;
-    width: 80vw;
-    margin: 0 auto;
-    padding: 60px 40px;
-    text-align: center;
-    animation: fadeIn 0.8s ease; */
 }
 
 .subtitle-realizacoes {
@@ -340,9 +330,12 @@ body {
 
 .info-realizacoes {
     overflow-y: hidden;
-    max-width: 1280px;
+    width: 100%;
+    max-width: 1300px;
     height: 540px;
     margin-bottom: 50px;
+    margin-left: auto;
+    margin-right: auto;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
@@ -354,6 +347,7 @@ body {
     stroke: 1px solid #fffefc;
     background-color: #00000032;
     box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.3);
+    scrollbar-color: #3d2f00 transparent;
 }
 
 .detail-realizações {
@@ -367,7 +361,7 @@ body {
     padding: 20px 60px 20px 60px;
     line-height: 1.8;
     letter-spacing: 1.5px;
-    height: 600px;
+    height: 100%;
     scrollbar-width: thin;
     margin: 0 auto;
     text-align: justify;
@@ -386,6 +380,9 @@ body {
 
 
 .governor-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 60px 200px;
 }
 
@@ -604,7 +601,7 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
     gap: 20px;
-    padding: 0 120px;
+    padding: 0 550px;
     margin-bottom: 45px;
 }
 
