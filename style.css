@@ -927,7 +927,7 @@ body {
 
 
 /* RESPONSIVE */
-@media (max-width: 1640px) {
+@media (max-width: 2000px) {
     .screen{
         padding: 20px;
         flex-direction: none;
