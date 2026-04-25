@@ -924,49 +924,94 @@ body {
     display: block;
 }
 
+
+
 /* RESPONSIVE */
-@media (max-width: 768px) {
-    .title {
-        font-size: 2.5rem;
+@media (max-width: 2800px) {
+    .screen{
+        padding: 20px;
+        flex-direction: none;
     }
-
-    .subtitle {
-        font-size: 2rem;
+    .content{
+        margin: 0;
     }
-
-    .description,
-    .governor-bio {
+    .governors-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 20px;
+        padding: 0 20px;
+         margin-bottom: 45px;
+    }
+    .content-screen-1{
+        padding: 60px;
+    }
+    .title-inicio{
+         font-size: 3rem;
+    }
+    .description{
+        font-size: 1.4rem;
+        margin: 0;
+        padding: 20px 40px 20px 40px;
+        height: fit-content;
+        margin-bottom: 20px;
+    }
+    .btn-primary{
+        padding: 5px 20px;
+        margin-top: 20px;
+    }
+    .informacoes-governadores{
+        width: 1200px;
+        margin-bottom: 30px;
+    }
+    .datas{
+         margin-bottom: 20px;
+    }
+    .governor-bio{
+        font-size: 1.4rem;
+    }
+    .content-curiosidades{
+       width: 100vw; 
+       margin: 0 0;
+    }
+    .subtitle-curiosidades{
+        font-size: 3rem;
+    }
+    .info-curiosidades{
+        margin-bottom: 30px;
+    }
+    .navigation-buttons{
+        gap: 5px;
+    }
+    .btn-secondary{
+        padding: 6px 20px;
         font-size: 1rem;
     }
-
-    .content {
-        padding: 40px 20px;
+    .photos-container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        max-width: 2000px;
+        height: 100%;
     }
-
-    .governors-grid {
-        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-        gap: 15px;
+    .prev-btn {
+        left: 11px;
     }
-
-    .carousel-slides {
-        grid-template-columns: repeat(2, 1fr);
+    .next-btn {
+        right: 11px;
     }
-
-    .btn {
-        padding: 12px 24px;
-        font-size: 0.9rem;
-        margin: 8px;
+    .content-realizacoes{
+       width: 100vw; 
+       margin: 0 0;
     }
-
-    .navigation-buttons {
-        flex-direction: column;
+    .content-photos{
+         width: 100vw; 
+         margin: 0 0;
     }
-
-    .btn-secondary {
-        font-family: "abril-titling", serif;
-        font-weight: 700;
-        font-style: normal;
-        letter-spacing: 1.5px;
-        width: 100%;
+    .subtitle-photos{
+        font-size: 3rem;
+    }
+     .subtitle-realizacoes{
+        font-size: 3rem;
     }
 }
+
