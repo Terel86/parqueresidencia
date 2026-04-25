@@ -927,7 +927,7 @@ body {
 
 
 /* RESPONSIVE */
-@media (max-width: 2800px) {
+@media (max-width: 1640px) {
     .screen{
         padding: 20px;
         flex-direction: none;
@@ -940,28 +940,31 @@ body {
         grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
         gap: 20px;
         padding: 0 20px;
-         margin-bottom: 45px;
+        margin-bottom: 80px;
     }
     .content-screen-1{
-        padding: 60px;
+        /* padding: 60px; */
     }
     .title-inicio{
          font-size: 3rem;
+    }
+    .terel {
+        bottom: 80px;
     }
     .description{
         font-size: 1.4rem;
         margin: 0;
         padding: 20px 40px 20px 40px;
         height: fit-content;
-        margin-bottom: 20px;
+        margin-bottom: 40px;
     }
     .btn-primary{
-        padding: 5px 20px;
+        padding: 10px 30px;
         margin-top: 20px;
     }
     .informacoes-governadores{
         width: 1200px;
-        margin-bottom: 30px;
+        margin-bottom: 80px;
     }
     .datas{
          margin-bottom: 20px;
@@ -977,13 +980,13 @@ body {
         font-size: 3rem;
     }
     .info-curiosidades{
-        margin-bottom: 30px;
+        margin-bottom: 80px;
     }
     .navigation-buttons{
         gap: 5px;
     }
     .btn-secondary{
-        padding: 6px 20px;
+        padding: 10px 30px;
         font-size: 1rem;
     }
     .photos-container{
@@ -992,6 +995,7 @@ body {
         justify-content: center;
         max-width: 2000px;
         height: 100%;
+        margin-bottom: 80px;
     }
     .prev-btn {
         left: 11px;
