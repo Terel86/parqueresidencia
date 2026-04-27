@@ -10883,18 +10883,18 @@
 
 		this.$prev.on('click', function (event) {
 			event.preventDefault();
-			if (self.currentImageIndex === 0) {
+			if (self.currentImageIndex === 0 && self.options.wrapAround && self.album.length > 1) {
 				self.changeImage(self.album.length - 1);
-			} else {
+			} else if (self.currentImageIndex > 0) {
 				self.changeImage(self.currentImageIndex - 1);
 			}
 		});
 
 		this.$next.on('click', function (event) {
 			event.preventDefault();
-			if (self.currentImageIndex === self.album.length - 1) {
+			if (self.currentImageIndex === self.album.length - 1 && self.options.wrapAround && self.album.length > 1) {
 				self.changeImage(0);
-			} else {
+			} else if (self.currentImageIndex < self.album.length - 1) {
 				self.changeImage(self.currentImageIndex + 1);
 			}
 		});
@@ -11207,6 +11207,8 @@
 		} catch (ignore) { /* Touch detection */ }
 
 		this.$nav.show();
+		this.$prev.hide();
+		this.$next.hide();
 
 		if (this.album.length > 1) {
 			if (this.options.wrapAround) {

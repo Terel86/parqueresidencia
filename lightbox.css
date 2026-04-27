@@ -1,7 +1,7 @@
 :root {
 	--lb-overlay-opacity: 1;
 	--lb-overlay-bg: rgba(0, 0, 0, 0.286);
-	--lb-border-radius: 3px;
+	--lb-border-radius: 15px;
 	--lb-image-border-width: 4px;
 	--lb-image-border-color: #fff;
 	--lb-container-bg: #fff;
@@ -68,7 +68,7 @@ body.lb-disable-scrolling {
 	height: auto;
 	max-width: min(92vw, 1400px);
 	max-height: 80vh;
-	object-fit: contain;
+	/* object-fit: contain; */
 	margin: 0 auto;
 	border: var(--lb-image-border-width) solid var(--lb-image-border-color);
 	border-radius: var(--lb-border-radius);
@@ -83,7 +83,7 @@ body.lb-disable-scrolling {
 	margin: 0 auto;
 	max-width: 92vw;
 	max-height: 84vh;
-	border-radius: 4px;
+	border-radius: 15px;
 	background-color: var(--lb-container-bg);
 }
 
@@ -255,6 +255,8 @@ body.lb-disable-scrolling {
 	font-size: 13px;
 	font-weight: bold;
 	line-height: 1.2em;
+	text-transform: uppercase;
+	letter-spacing: 1px;
 	color: #ccc;
 }
 

@@ -22,6 +22,13 @@ body {
     font-family: "abril-titling", serif;
 }
 
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 @media (prefers-reduced-motion: reduce) {
     .screen {
         transition-duration: 0.01ms !important;
@@ -37,6 +44,7 @@ body {
     left: 0;
     width: 100%;
     height: 100vh;
+    height: 100dvh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -276,7 +284,10 @@ body {
     width: 200px;
     height: 200px;
     object-fit: cover;
-    border-radius: 8px;
+    border-radius: 10px;
+    border: solid 1px #ffffff4d;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.519);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .photo-galery {
@@ -837,7 +848,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-wrap: no-wrap;
+    flex-wrap: nowrap;
     gap: 15px;
 }
 
@@ -1172,6 +1183,325 @@ body {
 
     .terel {
         bottom: 48px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .governor-details {
+        width: 100%;
+        padding: 24px;
+    }
+
+    .informacoes-governadores {
+        width: 100%;
+        max-width: 980px;
+        margin-top: 40px;
+        margin-bottom: 28px;
+        gap: 20px;
+        flex-direction: column;
+    }
+
+    .subtitle,
+    .sub_details,
+    .sub_details-mandatos,
+    .datas {
+        width: 100%;
+        max-width: 100%;
+        text-align: center;
+        padding-left: 0;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .info-text {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        min-height: 320px;
+        margin-bottom: 20px;
+    }
+
+    .detail-governador {
+        margin-left: 0;
+    }
+
+    .foto-governador {
+        width: min(100%, 360px);
+    }
+}
+
+@media (max-width: 992px) {
+    .content,
+    .content-screen-1,
+    .content-curiosidades,
+    .content-realizacoes,
+    .content-photos {
+        width: 100vw;
+        max-width: 100vw;
+        padding: 24px 16px;
+    }
+
+    .title,
+    .title-inicio,
+    .subtitle-curiosidades,
+    .subtitle-realizacoes,
+    .subtitle-photos {
+        font-size: clamp(2rem, 5vw, 2.8rem);
+        margin-bottom: 16px;
+    }
+
+    .description {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        height: auto;
+        max-height: 52dvh;
+        overflow-y: auto;
+        padding: 18px;
+        margin-bottom: 18px;
+    }
+
+    .governor-bio,
+    .detail-curiosidades,
+    .detail-realizações {
+        font-size: 1.05rem;
+        line-height: 1.6;
+        letter-spacing: 1px;
+    }
+
+    .governor-bio {
+        height: auto;
+        max-height: 45dvh;
+        margin-bottom: 18px;
+    }
+
+    .detail-governador {
+        max-height: 45dvh;
+        padding: 16px;
+    }
+
+    .info-curiosidades,
+    .info-realizacoes {
+        height: auto;
+        min-height: 260px;
+        max-height: 52dvh;
+        margin-bottom: 20px;
+    }
+
+    .detail-curiosidades,
+    .detail-realizações {
+        padding: 16px;
+    }
+
+    .governors-grid {
+        grid-template-columns: repeat(4, minmax(110px, 1fr));
+        gap: 12px;
+        padding: 0 8px;
+        margin-bottom: 20px;
+    }
+
+    .governor-card {
+        height: 154px;
+    }
+
+    .governor-image {
+        height: 124px;
+    }
+
+    .governor-name {
+        font-size: 0.6rem;
+        padding: 8px 4px 0;
+    }
+
+    .photos-container {
+        margin-top: 16px;
+        min-height: 360px;
+        margin-bottom: 16px;
+    }
+
+    .photo-block {
+        width: 95%;
+        gap: 10px;
+    }
+
+    .photos-grid img,
+    .photo-galery {
+        width: 130px;
+        height: 130px;
+    }
+
+    .prev-btn,
+    .next-btn {
+        top: 50%;
+        width: 42px;
+        height: 42px;
+        font-size: 20px;
+    }
+
+    .prev-btn {
+        left: 2px;
+    }
+
+    .next-btn {
+        right: 2px;
+    }
+
+    .btn,
+    .btn-primary,
+    .btn-secondary {
+        padding: 10px 18px;
+        font-size: 0.9rem;
+        margin: 6px;
+    }
+
+    .navigation-buttons {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .mandate-btn {
+        font-size: 1rem;
+        padding: 10px 12px;
+    }
+
+    .terel {
+        bottom: 12px;
+        max-width: calc(100% - 24px);
+        line-height: 1.8;
+        padding: 4px 10px;
+        font-size: 0.55rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .screen {
+        padding: 10px;
+    }
+
+    .content,
+    .content-screen-1,
+    .content-curiosidades,
+    .content-realizacoes,
+    .content-photos {
+        padding: 16px 10px;
+    }
+
+    .title,
+    .title-inicio,
+    .subtitle-curiosidades,
+    .subtitle-realizacoes,
+    .subtitle-photos {
+        font-size: clamp(1.5rem, 7vw, 2rem);
+        letter-spacing: 1px;
+    }
+
+    .subtitle {
+        font-size: 1.5rem;
+        letter-spacing: 1px;
+    }
+
+    .datas {
+        font-size: 1rem;
+        margin-bottom: 12px;
+        line-height: 1.5;
+    }
+
+    .description {
+        font-size: 0.95rem;
+        max-height: 50dvh;
+    }
+
+    .detail-governador,
+    .detail-curiosidades,
+    .detail-realizações,
+    .governor-bio {
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+
+    .info-curiosidades,
+    .info-realizacoes {
+        max-height: 48dvh;
+        margin-bottom: 14px;
+    }
+
+    .governors-grid {
+        grid-template-columns: repeat(3, minmax(90px, 1fr));
+        gap: 8px;
+        margin-bottom: 14px;
+    }
+
+    .governor-card {
+        height: 128px;
+    }
+
+    .governor-image {
+        height: 102px;
+    }
+
+    .governor-name {
+        font-size: 0.52rem;
+    }
+
+    .foto-governador {
+        width: min(100%, 260px);
+        border-radius: 14px;
+    }
+
+    .photos-container {
+        min-height: 305px;
+    }
+
+    .photos-grid img,
+    .photo-galery {
+        width: 100px;
+        height: 100px;
+    }
+
+    .prev-btn,
+    .next-btn {
+        width: 34px;
+        height: 34px;
+        font-size: 16px;
+    }
+
+    .btn,
+    .btn-primary,
+    .btn-secondary {
+        padding: 8px 12px;
+        font-size: 0.78rem;
+        margin: 4px;
+    }
+
+    .mandate-btn {
+        font-size: 0.88rem;
+        letter-spacing: 0.6px;
+        text-align: center;
+    }
+
+    .hint {
+        font-size: 0.85rem;
+        margin-bottom: 12px;
+    }
+
+    .terel {
+        position: static;
+        margin-top: 6px;
+    }
+}
+
+@media (max-width: 420px) {
+    .governors-grid {
+        grid-template-columns: repeat(2, minmax(110px, 1fr));
+    }
+
+    .photo-block {
+        width: 100%;
+    }
+
+    .photos-grid img,
+    .photo-galery {
+        width: 86px;
+        height: 86px;
     }
 }
 
