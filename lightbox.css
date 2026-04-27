@@ -2,9 +2,9 @@
 	--lb-overlay-opacity: 1;
 	--lb-overlay-bg: rgba(0, 0, 0, 0.286);
 	--lb-border-radius: 15px;
-	--lb-image-border-width: 4px;
-	--lb-image-border-color: #fff;
-	--lb-container-bg: #fff;
+	--lb-image-border-width: 0px;
+	--lb-image-border-color: transparent;
+	--lb-container-bg: transparent;
 	--lb-caption-link-color: #4ae;
 	--lb-nav-transition-speed: 0.3s;
 }
@@ -64,11 +64,9 @@ body.lb-disable-scrolling {
 
 .lightbox .lb-image {
 	display: block;
-	width: auto;
-	height: auto;
-	max-width: min(92vw, 1400px);
-	max-height: 80vh;
-	/* object-fit: contain; */
+	/* width/height/max-* são calculados precisamente pelo JS.
+	   Não adicionar max-width/max-height/object-fit aqui — conflitam
+	   com o JS e fazem os botões ficarem fora da foto. */
 	margin: 0 auto;
 	border: var(--lb-image-border-width) solid var(--lb-image-border-color);
 	border-radius: var(--lb-border-radius);
@@ -81,6 +79,8 @@ body.lb-disable-scrolling {
 .lb-outerContainer {
 	position: relative;
 	margin: 0 auto;
+	display: inline-block;
+	width: fit-content;
 	max-width: 92vw;
 	max-height: 84vh;
 	border-radius: 15px;
@@ -95,6 +95,10 @@ body.lb-disable-scrolling {
 
 .lb-container {
 	position: relative;
+	display: inline-block;
+	width: auto;
+	padding: 0 !important;
+	background: transparent;
 }
 
 .lb-loader {
@@ -122,11 +126,13 @@ body.lb-disable-scrolling {
 	width: 100%;
 	height: 100%;
 	z-index: 10;
+	pointer-events: none;
 }
 
 .lb-nav a {
 	outline: none;
 	background-image: none;
+	pointer-events: auto;
 }
 
 .lb-prev,
@@ -138,7 +144,7 @@ body.lb-disable-scrolling {
 .lb-nav a.lb-prev {
 	position: absolute;
 	top: 50%;
-	left: 10px;
+	left: 8px;
 	width: 44px;
 	height: 44px;
 	transform: translateY(-50%);
@@ -151,7 +157,7 @@ body.lb-disable-scrolling {
 .lb-nav a.lb-next {
 	position: absolute;
 	top: 50%;
-	right: 10px;
+	right: 8px;
 	width: 44px;
 	height: 44px;
 	transform: translateY(-50%);
@@ -200,6 +206,7 @@ body.lb-disable-scrolling {
 	width: 100%;
 	border-bottom-left-radius: 4px;
 	border-bottom-right-radius: 4px;
+	background: transparent;
 }
 
 .lb-data {
@@ -209,20 +216,19 @@ body.lb-disable-scrolling {
 }
 
 .lb-closeContainer {
-	position: fixed;
-	top: 8px;
-	right: 16px;
-	left: auto;
-	bottom: auto;
+	position: absolute;
+	top: 20px;
+	right: 20px;
 	width: 34px;
 	height: 34px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	z-index: 10100;
+	z-index: 30;
+	pointer-events: auto;
 }
 
-.lb-data .lb-close {
+.lb-closeContainer .lb-close {
 	position: absolute;
 	width: 100%;
 	height: 100%;
@@ -236,7 +242,7 @@ body.lb-disable-scrolling {
 	border: 0;
 }
 
-.lb-data .lb-close::before {
+.lb-closeContainer .lb-close::before {
 	content: "×";
 	color: #fff;
 	font-size: 24px;

@@ -10830,7 +10830,7 @@
 		// on the page below.
 		//
 		// Github issue: https://github.com/lokesh/lightbox2/issues/663
-		$('<div id="lightboxOverlay" tabindex="-1" class="lightboxOverlay"></div><div id="lightbox" tabindex="-1" class="lightbox" role="dialog" aria-modal="true" aria-label="Image lightbox"><div class="lb-outerContainer"><div class="lb-container"><img class="lb-image" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" alt="" aria-describedby="lb-caption"/><div class="lb-nav"><a class="lb-prev" role="button" tabindex="0" aria-label="Previous image"></a><a class="lb-next" role="button" tabindex="0" aria-label="Next image"></a></div><div class="lb-loader"><a class="lb-cancel" role="button" tabindex="0"></a></div></div></div><div class="lb-dataContainer"><div class="lb-data"><div class="lb-details"><span id="lb-caption" class="lb-caption"></span><span class="lb-number" aria-live="polite"></span></div><div class="lb-closeContainer"><a class="lb-close" role="button" tabindex="0" href="javascript:void(0);"></a></div></div></div></div>').appendTo($('body'));
+		$('<div id="lightboxOverlay" tabindex="-1" class="lightboxOverlay"></div><div id="lightbox" tabindex="-1" class="lightbox" role="dialog" aria-modal="true" aria-label="Image lightbox"><div class="lb-outerContainer"><div class="lb-container"><img class="lb-image" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" alt="" aria-describedby="lb-caption"/><div class="lb-nav"><a class="lb-prev" role="button" tabindex="0" aria-label="Previous image"></a><a class="lb-next" role="button" tabindex="0" aria-label="Next image"></a></div><div class="lb-loader"><a class="lb-cancel" role="button" tabindex="0"></a></div><div class="lb-closeContainer"><a class="lb-close" role="button" tabindex="0" href="javascript:void(0);"></a></div></div></div><div class="lb-dataContainer"><div class="lb-data"><div class="lb-details"><span id="lb-caption" class="lb-caption"></span><span class="lb-number" aria-live="polite"></span></div></div></div></div>').appendTo($('body'));
 
 		// Cache jQuery objects
 		this.$lightbox = $('#lightbox');
@@ -10846,6 +10846,14 @@
 		this.$caption = this.$lightbox.find('.lb-caption');
 		this.$number = this.$lightbox.find('.lb-number');
 		this.$close = this.$lightbox.find('.lb-close');
+		this.$closeContainer = this.$lightbox.find('.lb-closeContainer');
+
+		// Anchor close button to outerContainer, which gets its size set to
+		// the exact image dimensions by sizeContainer(). This ensures the X
+		// stays inside the photo for both portrait and landscape images.
+		if (this.$closeContainer.length) {
+			this.$outerContainer.append(this.$closeContainer);
+		}
 
 		// Store css values for future lookup
 		this.containerPadding = {
@@ -10861,6 +10869,11 @@
 			bottom: parseInt(this.$image.css('border-bottom-width'), 10),
 			left: parseInt(this.$image.css('border-left-width'), 10)
 		};
+
+		// Keep controls anchored to the actual image area.
+		// We intentionally ignore container paddings and image borders in sizing math.
+		this.containerPadding = { top: 0, right: 0, bottom: 0, left: 0 };
+		this.imageBorderWidth = { top: 0, right: 0, bottom: 0, left: 0 };
 
 		// Attach event handlers to the newly minted DOM elements
 		this.$overlay.hide().on('click', function () {
