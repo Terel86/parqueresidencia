@@ -1,6 +1,6 @@
 :root {
 	--lb-overlay-opacity: 1;
-	--lb-overlay-bg: rgba(0, 0, 0, 0.286);
+	--lb-overlay-bg: rgba(0, 0, 0, 0.82);
 	--lb-border-radius: 15px;
 	--lb-image-border-width: 0px;
 	--lb-image-border-color: transparent;
@@ -45,6 +45,10 @@ body.lb-disable-scrolling {
 }
 
 #lightbox.lightbox {
+	/* Neutralize legacy .lightbox background from style.css to avoid
+	   different darkening levels that create a visible top strip. */
+	background: transparent !important;
+	backdrop-filter: none !important;
 	z-index: 2147483647 !important;
 }
 
