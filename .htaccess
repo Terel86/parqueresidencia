@@ -1,0 +1,4 @@
+# Modo de compatibilidade para liberar o IP do Kiosk
+Order Deny,Allow
+Allow from all
+Allow from 177.84.201.17

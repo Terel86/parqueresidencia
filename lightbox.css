@@ -7,6 +7,7 @@
 	--lb-container-bg: transparent;
 	--lb-caption-link-color: #4ae;
 	--lb-nav-transition-speed: 0.3s;
+	--lb-close-fade-speed: 0.6s;
 }
 
 body.lb-disable-scrolling {
@@ -124,6 +125,7 @@ body.lb-disable-scrolling {
 }
 
 .lb-nav {
+	display: none;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -152,7 +154,7 @@ body.lb-disable-scrolling {
 	width: 44px;
 	height: 44px;
 	transform: translateY(-50%);
-	background: rgba(0, 0, 0, 0.5);
+	background: transparent;
 	border-radius: 50%;
 	opacity: 1;
 	transition: opacity var(--lb-nav-transition-speed);
@@ -165,7 +167,7 @@ body.lb-disable-scrolling {
 	width: 44px;
 	height: 44px;
 	transform: translateY(-50%);
-	background: rgba(0, 0, 0, 0.5);
+	background: transparent;
 	border-radius: 50%;
 	opacity: 1;
 	transition: opacity var(--lb-nav-transition-speed);
@@ -194,7 +196,7 @@ body.lb-disable-scrolling {
 
 .lb-nav a.lb-prev:hover,
 .lb-nav a.lb-next:hover {
-	opacity: 0.8;
+	opacity: 0;
 }
 
 @media (hover: none), (pointer: coarse) {
@@ -223,13 +225,20 @@ body.lb-disable-scrolling {
 	position: absolute;
 	top: 20px;
 	right: 20px;
-	width: 34px;
-	height: 34px;
+	width: 30px;
+	height: 30px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	z-index: 30;
 	pointer-events: auto;
+	opacity: 1;
+	transition: opacity var(--lb-close-fade-speed) ease;
+}
+
+.lb-outerContainer.animating .lb-closeContainer {
+	opacity: 0;
+	pointer-events: none;
 }
 
 .lb-closeContainer .lb-close {
@@ -267,11 +276,11 @@ body.lb-disable-scrolling {
 	line-height: 1.2em;
 	text-transform: uppercase;
 	letter-spacing: 1px;
-	color: #ccc;
+	color: transparent;
 }
 
 .lb-data .lb-caption a {
-	color: var(--lb-caption-link-color);
+	color: transparent;
 }
 
 .lb-data .lb-number {
