@@ -1,14 +1,17 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Governadores do Amapá</title>
-    <link rel="preload" as="image" href="/src/img/Capa.webp" fetchpriority="high">
+    <link rel="preconnect" href="https://use.typekit.net">
+    <link rel="preconnect" href="https://p.typekit.net" crossorigin>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="style-galeria.css">
-    <link rel="stylesheet" href="lightbox.css">
+    <link rel="preload" as="style" href="style-galeria.css" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" as="style" href="lightbox.css" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="style-galeria.css"></noscript>
+    <noscript><link rel="stylesheet" href="lightbox.css"></noscript>
     <link rel="stylesheet" href="https://use.typekit.net/rym0eee.css">
 </head>
 
@@ -5706,11 +5709,11 @@
         </div>
     </section>
 
-    <script src="lightbox-plus-jquery.js"></script>
-    <script src="click-sound.js"></script>
-    <script src="kiosk-mode.js"></script>
+    <script defer src="lightbox-plus-jquery.js"></script>
+    <script defer src="click-sound.js"></script>
+    <script defer src="kiosk-mode.js"></script>
     <script>
-        $(document).ready(function () {
+        window.addEventListener('DOMContentLoaded', function () {
             const SCREEN_EXIT_MS = 300;
             let isHashTransitioning = false;
             function applyLightboxSizingOptions() {
